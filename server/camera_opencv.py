@@ -288,6 +288,9 @@ class CVThread(threading.Thread):
         else:
             print('No servoPort %d assigned.'%ID)
 
+    def findBall(self, frame_image):
+        
+
     def findColor(self, frame_image):
         hsv = cv2.cvtColor(frame_image, cv2.COLOR_BGR2HSV)
         mask = cv2.inRange(hsv, colorLower, colorUpper)#1
