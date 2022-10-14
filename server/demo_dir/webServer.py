@@ -1,6 +1,5 @@
 import time
 import threading
-import move
 import os
 
 import robotLight
