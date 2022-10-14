@@ -8,8 +8,6 @@ from base_camera import BaseCamera
 
 class CVThread(threading.Thread):
     font = cv2.FONT_HERSHEY_SIMPLEX
-    kalman_filter_X = Kalman_filter.Kalman_filter(0.01, 0.1)
-    kalman_filter_Y = Kalman_filter.Kalman_filter(0.01, 0.1)
     cameraDiagonalW = 64
     cameraDiagonalH = 48
     videoW = 640
