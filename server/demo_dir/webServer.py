@@ -42,8 +42,7 @@ def update_code():
         if not config['production']:
             print('Update code')
             # Force overwriting local code
-            if os.system(
-                    f'cd {projectPath} && sudo git fetch --all && sudo git reset --hard origin/master && sudo git pull') == 0:
+            if os.system(f'cd {projectPath} && sudo git fetch --all && sudo git reset --hard origin/master && sudo git pull') == 0:
                 print('Update successfully')
                 print('Restarting...')
                 os.system('sudo reboot')
