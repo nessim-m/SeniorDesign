@@ -4,7 +4,7 @@ from importlib import import_module
 
 import os
 
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, send_from_directory
 
 from camera_opencv import Camera
 
@@ -31,3 +31,23 @@ def video_feed():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', threaded=True)
+
+
+dir_path = os.path.dirname(os.path.realpath(__file__))
+
+@app.route('/api/img/<path:filename>')
+def sendimg(filename):
+    return send_from_directory(dir_path+'/dist/img', filename)
+
+@app.route('/js/<path:filename>')
+def sendjs(filename):
+    return send_from_directory(dir_path+'/dist/js', filename)
+
+@app.route('/css/<path:filename>')
+def sendcss(filename):
+    return send_from_directory(dir_path+'/dist/css', filename)
+
+@app.route('/api/img/icon/<path:filename>')
+def sendicon(filename):
+    return send_from_directory(dir_path+'/dist/img/icon', filename)
+
