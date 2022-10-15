@@ -22,7 +22,7 @@ import asyncio
 import websockets
 
 import json
-from server import app
+from server.demo_dir.video_dir.server import app
 
 OLED_connection = 1
 try:

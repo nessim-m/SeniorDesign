@@ -1,8 +1,8 @@
 import socket
 import os
 
-HOST = '192.168.1.107'  # Standard loopback interface address (localhost)
-PORT = 65431     # Port to listen on (non-privileged ports are > 1023)
+HOST = '192.168.1.139'  # Standard loopback interface address (localhost)
+PORT = 5000     # Port to listen on (non-privileged ports are > 1023)
 
 dataFromClient = ""
 
@@ -23,8 +23,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             conn.sendall(data)
             break
 
-fileName = 'tempfile.py'
-with open(fileName,'w+') as f:
-    f.write(dataFromClient)
-
-os.system(f"python3 {fileName}")
+# fileName = 'tempfile.py'
+# with open(fileName,'w+') as f:
+#     f.write(dataFromClient)
+#
+# os.system(f"python3 {fileName}")

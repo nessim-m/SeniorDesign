@@ -1,6 +1,6 @@
 import os
 import cv2
-from server.base_camera import BaseCamera
+from server.demo_dir.video_dir.server import BaseCamera
 import RPIservo
 import numpy as np
 import move
