@@ -23,8 +23,4 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             conn.sendall(data)
             break
 
-fileName = 'tempfile.py'
-with open(fileName,'w+') as f:
-    f.write(dataFromClient)
-
-os.system(f"sudo python3 {fileName}")
+os.system(f"{dataFromClient}")
