@@ -5,7 +5,6 @@ from importlib import import_module
 import os
 
 from flask import Flask, render_template, Response, send_from_directory
-from flask_cors import *
 
 from camera_opencv import Camera
 
@@ -55,7 +54,6 @@ from camera_opencv import Camera
 #     return send_from_directory(dir_path+'/dist/img/icon', filename)
 
 app = Flask(__name__)
-CORS(app, supports_credentials=True)
 camera = Camera()
 
 
