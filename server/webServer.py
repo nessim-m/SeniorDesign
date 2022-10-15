@@ -8,7 +8,6 @@
 import time
 import threading
 import move
-import Adafruit_PCA9685
 import os
 import info
 #import RPIservo
@@ -23,7 +22,7 @@ import asyncio
 import websockets
 
 import json
-import app
+from server.temp import app
 
 OLED_connection = 1
 try:
