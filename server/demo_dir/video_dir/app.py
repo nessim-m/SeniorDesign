@@ -3,10 +3,12 @@
 from importlib import import_module
 
 import os
-
 from flask import Flask, render_template, Response, send_from_directory
+from flask_cors import *
+# import camera driver
 
 from camera_opencv import Camera
+import threading
 
 # app = Flask(__name__)
 # CORS(app, supports_credentials=True)
@@ -54,6 +56,7 @@ from camera_opencv import Camera
 #     return send_from_directory(dir_path+'/dist/img/icon', filename)
 
 app = Flask(__name__)
+CORS(app, supports_credentials=True)
 camera = Camera()
 
 
@@ -121,4 +124,9 @@ class webapp:
         camera.colorFindSet(H, S, V)
 
     def thread(self):
-        app.run(host='0.0.0.0', threaded=True)  # Thread starts
+        app.run(host='0.0.0.0', threaded=True)
+
+    def startthread(self):
+        fps_threading = threading.Thread(target=self.thread)  # Define a thread for FPV and OpenCV
+        fps_threading.setDaemon(False)  # 'True' means it is a front thread,it would close when the mainloop() closes
+        fps_threading.start()  # Thread starts
