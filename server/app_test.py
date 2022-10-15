@@ -11,8 +11,6 @@ from camera_opencv import Camera
 import threading
 
 # app = Flask(__name__)
-# CORS(app, supports_credentials=True)
-# camera = Camera()
 #
 #
 # def gen(camera):
@@ -36,24 +34,7 @@ import threading
 # if __name__ == '__main__':
 #     app.run(host='0.0.0.0', threaded=True)
 #
-#
-# dir_path = os.path.dirname(os.path.realpath(__file__))
-#
-# @app.route('/api/img/<path:filename>')
-# def sendimg(filename):
-#     return send_from_directory(dir_path+'/dist/img', filename)
-#
-# @app.route('/js/<path:filename>')
-# def sendjs(filename):
-#     return send_from_directory(dir_path+'/dist/js', filename)
-#
-# @app.route('/css/<path:filename>')
-# def sendcss(filename):
-#     return send_from_directory(dir_path+'/dist/css', filename)
-#
-# @app.route('/api/img/icon/<path:filename>')
-# def sendicon(filename):
-#     return send_from_directory(dir_path+'/dist/img/icon', filename)
+
 
 app = Flask(__name__)
 CORS(app, supports_credentials=True)
