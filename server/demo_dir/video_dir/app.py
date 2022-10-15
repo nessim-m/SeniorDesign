@@ -5,6 +5,7 @@ from importlib import import_module
 import os
 
 from flask import Flask, render_template, Response, send_from_directory
+from flask_cors import *
 
 from camera_opencv import Camera
 
