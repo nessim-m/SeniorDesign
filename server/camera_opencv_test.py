@@ -2,17 +2,9 @@ import os
 
 import cv2
 
-from base_camera import BaseCamera
-
-import numpy as np
-
-import datetime
-
-import time
+from server.base_camera_test import BaseCamera
 
 import threading
-
-import imutils
 
 
 class CVThread(threading.Thread):

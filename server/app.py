@@ -15,6 +15,7 @@ app = Flask(__name__)
 CORS(app, supports_credentials=True)
 camera = Camera()
 
+
 def gen(camera):
     """Video streaming generator function."""
     while True:

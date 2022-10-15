@@ -11,7 +11,7 @@ import move
 import Adafruit_PCA9685
 import os
 import info
-import RPIservo
+#import RPIservo
 
 import functions
 import robotLight
@@ -192,14 +192,14 @@ def switchCtrl(command_input, response):
         switch.switch(3,1)
 
     elif 'Switch_3_off' in command_input:
-        switch.switch(3,0) 
+        switch.switch(3,0)
 
 
 def robotCtrl(command_input, response):
     if 'forward' == command_input:
         direction_command = 'forward'
         move.move(speed_set, 'forward', 'no', rad)
-    
+
     elif 'backward' == command_input:
         direction_command = 'backward'
         move.move(speed_set, 'backward', 'no', rad)
@@ -265,7 +265,7 @@ def setPWM(data):
     global init_pwm
     action = data.split()[0]
     PWMNum = int(data.split()[1])
-    
+
     if 'SiLeft' == action:
         print('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
         init_pwm[PWMNum] += 1

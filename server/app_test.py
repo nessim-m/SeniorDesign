@@ -7,7 +7,7 @@ from flask import Flask, render_template, Response, send_from_directory
 from flask_cors import *
 # import camera driver
 
-from camera_opencv import Camera
+from camera_opencv_test import Camera
 import threading
 
 # app = Flask(__name__)
