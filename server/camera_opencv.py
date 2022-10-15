@@ -2,7 +2,7 @@ import os
 
 import cv2
 
-from server.base_camera import BaseCamera
+from base_camera import BaseCamera
 
 import threading
 
