@@ -54,7 +54,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 break
             dataFromClient = data.decode('utf-8')
             if (dataFromClient ==  'start'):
-                start():
+                start()
             #print('sending data recieved back...')
             conn.sendall(data)
             break
