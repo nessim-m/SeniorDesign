@@ -52,8 +52,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             if not data:
                 break
             dataFromClient = data.decode('utf-8')
-            if dataFromClient in 'start':
-                print('its here')
+            if 'start' in dataFromClient:
+                print('its here-----')
                 app = Flask(__name__)
             # print('sending data recieved back...')
             conn.sendall(data)
