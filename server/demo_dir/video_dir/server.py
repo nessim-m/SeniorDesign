@@ -55,8 +55,8 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             if 'start' in dataFromClient:
                 app = Flask(__name__)
             # print('sending data recieved back...')
-            conn.sendall(data)
-            conn.send(b"connected2")
+            # conn.sendall(data)
+            conn.send(b"Connected")
             break
 
 
