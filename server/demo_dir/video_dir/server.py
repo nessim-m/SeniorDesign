@@ -42,6 +42,7 @@ dataFromClient = ""
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
     s.bind((HOST, PORT))
     s.listen()
+    s.send(b"connected1")
     conn, addr = s.accept()
     with conn:
         print('Connected by', addr)
@@ -56,6 +57,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 app = Flask(__name__)
             # print('sending data recieved back...')
             conn.sendall(data)
+            conn.send(b"connected2")
             break
 
 
